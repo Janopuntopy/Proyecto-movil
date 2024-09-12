@@ -1,0 +1,72 @@
+
+<ion-header [translucent]="true">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-margin">
+      <ion-col size="12" size-md="8" size-lg="6">
+        <ion-toolbar>
+          <ion-title class="ion-text-center" #animarH1>GG</ion-title>
+        </ion-toolbar>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-margin">
+      <ion-col size="12" size-md="8" size-lg="6">
+  <div class="ion-padding">
+    <ion-title class="ion-text-center">
+    <ion-label><h1>Bienvenida/o {{login.usuario}}</h1></ion-label>
+  </ion-title>
+    <div class="container">
+      <div class="card">
+        <img src="https://i.pinimg.com/236x/a0/61/96/a0619647043fcc1ce07a2723a8a3888e.jpg" alt="Imagen 1" class="card-img"/>
+        <div>
+          <h2>Monopoly</h2>
+          <p>Juego para niños</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="card">
+    <img src="https://logos-world.net/wp-content/uploads/2023/05/Magic-The-Gathering-Logo.png"/>
+    <div>
+      <h2>Magic</h2>
+      <p>Juego para todas las edades</p>
+    </div>
+  </div>
+</div>
+  </div>
+<div class="ion-text-center">
+  <h4>Que vamos a jugar</h4>
+</div>
+<ion-item>
+  <ion-input label="Nombre de la partida" labelPlacement="floating" [(ngModel)]="data.nombrePartida"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-input label="Numero de participantes" labelPlacement="floating" type="number"  [(ngModel)]="data.numParticipante" ></ion-input>
+</ion-item>
+<ion-item>
+    <ion-select label="Tipo de juegos" placeholder="Seleccione nivel" [(ngModel)]="data.juego">
+      <ion-select-option *ngFor="let niv of niveles" [value]="niv.id">{{niv.nivel}}</ion-select-option>
+    </ion-select>
+</ion-item>
+<ion-item>
+  <ion-input label="Puntos a ganar" labelPlacement="floating" type="number" [(ngModel)]="data.puntos"></ion-input>
+</ion-item>
+<ion-grid>
+  <ion-row>
+    <ion-col size="6">
+      <ion-button shape="block" (click)="limpiar()">Limpiar</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button shape="block" (click)="mostrar()">Mostrar</ion-button>
+      <a [routerLink]="['/login']">Cerrar Seción</a>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>

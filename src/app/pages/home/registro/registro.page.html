@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-margin">
+      <ion-col size="12" size-md="8" size-lg="6">
+  <div class="ion-padding">
+    <ion-title class="ion-text-center">
+    <ion-label><h1>Bienvenido nuevo usuario</h1></ion-label>
+  </ion-title>
+  </div>
+<div class="ion-text-center">
+  <h4>Ingrese sus datos aqui</h4>
+</div>
+<ion-item>
+  <ion-input label="Nombre de usuario" labelPlacement="floating" [(ngModel)]="data.usuario"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-input label="Correo electronico" labelPlacement="floating"  [(ngModel)]="data.correo" ></ion-input>
+</ion-item>
+<ion-item>
+  <ion-input label="Contraseña" labelPlacement="floating" type="password" [(ngModel)]="data.password"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-input label="Fecha de nacimiento" labelPlacement="floating" type="date" [(ngModel)]="data.fecha" ></ion-input>
+</ion-item>
+<ion-list style="text-align: center;">
+  <ion-button class="ion-button" shape="round">Registrarse</ion-button>
+  <h1></h1>
+  <a [routerLink]="['/login']">Iniciar Seción</a>
+</ion-list>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-content>
