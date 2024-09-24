@@ -7,30 +7,29 @@
   <ion-card>
     <img alt="Silhouette of mountains" src="https://images.ctfassets.net/s5n2t79q9icq/114xMnrR6RiLD15UxL8LYZ/ca73ec9fe59f654a150b543e05979181/Meta-Homepage.jpg" />
     <ion-card-header>
-      <ion-card-title class="ion-text-center">Iniciar Sesión</ion-card-title>
+      <ion-card-title class="ion-text-center">Cambiar contraseña</ion-card-title>
     </ion-card-header>
   </ion-card>
-
 
   <div class="ion-text-center">
     <ion-card-content>
       <ion-item>
-        <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="login.usuario"></ion-input>
+        <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="error.usuario"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input label="Contraseña" labelPlacement="floating" type="password" [(ngModel)]="login.password"></ion-input>
+        <ion-input label="Nueva Contraseña" labelPlacement="floating" type="password" [(ngModel)]="error.newpassword"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Repita Contraseña" labelPlacement="floating" type="password" [(ngModel)]="error.newpassword"></ion-input>
       </ion-item>
     </ion-card-content>
   </div>
   <ion-list style="text-align: center;">
-    <ion-button class="ion-button" shape="round" (click)="ingresar()">Iniciar Sesión</ion-button>
-    <h6>
-      <a [routerLink]="['/error']">¿Se te olvido la contraseña?</a>
-    </h6>
-    <a [routerLink]="['/registro']">Registrarse</a>
+    <ion-button class="ion-button" shape="round" (click)="error()">Continuar</ion-button>
+    <h6></h6>
+      <a [routerLink]="['/login']">Iniciar Seción</a>
   </ion-list>
 </ion-col>
 </ion-row>
 </ion-grid>
 </ion-content>
-

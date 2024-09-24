@@ -52,7 +52,7 @@ export class LoginPage implements OnInit {
       this.router.navigate(['/home'], navigationExtras);
       
     }else{
-      this.presentToast("middle","Favor de rellenar espacio: "+this.field)
+      this.presentToast("middle","Favor rellenar datos: "+this.field)
     }
   }
   

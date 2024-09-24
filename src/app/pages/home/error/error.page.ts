@@ -2,34 +2,28 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 
-
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.page.html',
-  styleUrls: ['./registro.page.scss'],
+  selector: 'app-error',
+  templateUrl: './error.page.html',
+  styleUrls: ['./error.page.scss'],
 })
-export class RegistroPage implements OnInit {
+export class ErrorPage implements OnInit {
 
-  registro:any={
+  error:any={
     usuario:"",
-    password:"",
-    correo:"",
-    fecha:""
-  };
-
- 
+    newpassword:""
+  }
 
   field:string="";
-  constructor(public router: Router, public toastController:ToastController) {
-  }
+  constructor(public router: Router, public toastController:ToastController) { }
 
   ngOnInit() {
   }
 
-  registrarse(){
-    if(this.validateModel(this.registro)){
+  Error(){
+    if(this.validateModel(this.error)){
       let navigationExtras : NavigationExtras ={
-        state:{registro: this.registro}
+        state:{error: this.error}
       };
       this.router.navigate(['/login'], navigationExtras);
       
@@ -37,7 +31,6 @@ export class RegistroPage implements OnInit {
       this.presentToast("middle","Favor rellenar datos: "+this.field)
     }
   }
- 
 
   validateModel(model:any){
     for(var [key,value] of Object.entries(model)){
@@ -48,7 +41,7 @@ export class RegistroPage implements OnInit {
     }
     return true;
    }
-
+  
    async presentToast(position: 'top'|'middle'|'bottom', msg:string, duration?:number){
     const toast = await this.toastController.create({
       message: msg,
@@ -58,6 +51,4 @@ export class RegistroPage implements OnInit {
   
     await toast.present();
    }
-  
-
 }
